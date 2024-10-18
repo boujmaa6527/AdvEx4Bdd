@@ -1,0 +1,88 @@
+//Exercice:3
+
+//	//Exercice 3
+//	static void create(Articles obj) throws SQLException {
+//		String url = "jdbc:mariadb://localhost:3306/Shop";
+//		String user = "root";
+//		String pwd = "fms2024";
+//		
+//		Connection connection = DriverManager.getConnection(url, user, pwd);
+//		
+//		try(Statement statement = connection.createStatement()){
+//			String str = "INSERT INTO t_articles (Description, Brand, UnitaryPrice)"
+//					+ "VALUES ('" + obj.getDescription() +"' ,'"+ obj.getBrand() +"' , "+ obj.getPrice()+");";
+//			int row = statement.executeUpdate(str);
+//			if(row == 1) 	System.out.println("Insertion ok");
+//			
+//		}catch(SQLException e) {
+//			e.printStackTrace();
+//		}
+//	}
+//	static void upDate(String description, String newDescription, String newBrand, double nexwUnitaryPrice) throws SQLException {
+//        String sql = "UPDATE t_articles SET description = ?, Brand = ?, UnitaryPrice = ? WHERE description = ?";
+//
+//		String url = "jdbc:mariadb://localhost:3306/Shop";
+//		String user = "root";
+//		String pwd = "fms2024";
+//		
+//		Connection connection = DriverManager.getConnection(url, user, pwd);
+//		
+//		try(PreparedStatement statement = connection.prepareStatement(sql)){
+//			
+//			statement.setString(1, newDescription);
+//			statement.setString(2, newBrand);
+//			statement.setDouble(3, nexwUnitaryPrice);
+//			statement.setString(4, description);
+//			
+//			int row = statement.executeUpdate();
+//			if(row == 1) {
+//				System.out.println("upDate ok");
+//			}else {
+//				System.out.println("not found with description " + description);
+//			}
+//			
+//		}catch(SQLException e) {
+//			e.printStackTrace();
+//		}
+//	}
+//	static void delete(int id) throws SQLException {
+//		String url = "jdbc:mariadb://localhost:3306/Shop";
+//		String user = "root";
+//		String pwd = "fms2024";
+//		
+//		
+//		try(Connection connection = DriverManager.getConnection(url, user, pwd);
+//			PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM t_articles WHERE idArticle = ?")){
+//			preparedStatement.setInt(1, id);
+//			preparedStatement.executeUpdate();
+//			
+//			}catch(SQLException e) {
+//				e.printStackTrace();
+//			}
+//		
+//		
+//	}
+//	static Articles getArticleById(int id) throws SQLException {
+//		String url = "jdbc:mariadb://localhost:3306/Shop";
+//		String user = "root";
+//		String pwd = "fms2024";
+//		
+//		
+//		try(Connection connection = DriverManager.getConnection(url, user, pwd);
+//			PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM t_articles WHERE idArticle = ?")){
+//			preparedStatement.setInt(1, id);
+//			ResultSet result = preparedStatement.executeQuery();
+//			if(result.next()) {
+//				return new Articles(result.getInt("idArticle"), 
+//									result.setString("description"), 
+//									result.setString("brand"), 
+//									result.setDouble("UnitaryPrice"),
+//									result.setInt("idCategory");
+//			}
+//			
+//			}catch(SQLException e) {
+//				e.printStackTrace();
+//			}
+//		return null;
+//		
+//	}

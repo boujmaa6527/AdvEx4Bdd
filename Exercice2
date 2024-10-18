@@ -1,0 +1,31 @@
+//Exercice2
+//		//EXERCICE 2
+//		try{
+//				Class.forName("org.mariadb.jdbc.Driver");
+//		catch(ClassNotFoundException e){
+//			e.printStackTrace();
+//		}	
+//		String url = "jdbc:mariadb://localhost:3306/Shop";
+//		String user = "root";
+//		String pwd = "fms2024";
+//		try(Connection connection = DriverManager.getConnection(url, user, pwd)){
+//			String strSql = "SELECT * FROM t_Articles";
+//			try(Statement statement = connection.createStatement()){
+//				try(ResultSet resultSet = statement.executeQuery(strSql)){
+//					while(resultSet.next()) {
+//						int rsIdArticle = resultSet.getInt(1);
+//						String rsDescription = resultSet.getString(2);
+//						String rsBrand = resultSet.getString(3);
+//						double rsPrice = resultSet.getDouble(4);
+//						Articles article = new Articles(rsIdArticle, rsDescription, rsBrand, rsPrice);
+//						ListArticles.add(article);
+//					}
+//				}
+//			}
+//			for(Articles a: ListArticles) {
+//				System.out.println(a.getIdArticle()+"-" + a.getDescription()+ "-"+ a.getBrand()+ "-" + a.getPrice());
+//			}
+//		}
+//		
+//		
+//		
