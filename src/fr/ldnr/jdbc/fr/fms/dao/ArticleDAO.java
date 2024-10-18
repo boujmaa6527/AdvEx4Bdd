@@ -27,7 +27,7 @@ public  class ArticleDAO implements Dao<Articles> {
 	@Override
 	public void create(Articles obj) {
 		// on appelle la fonciton static Connect de la class BddConnection
-		connection =  (Connection) BddConnection.Connect();
+		//connection =  (Connection) BddConnection.Connect();
 		
 		try(Statement statement = connection.createStatement()){
 			String str = "INSERT INTO t_articles (Description, Brand, UnitaryPrice, Idcategory)"
