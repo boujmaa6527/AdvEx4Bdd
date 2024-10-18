@@ -20,7 +20,7 @@ public class MyApp {
 	public static void main(String[] args) throws Exception {
 		
 		
-		//for(int i=0; i<10;i++)	adao.read(i);		
+			
 		
 		ArrayList<Articles> ListArticles = new ArrayList<Articles>();
 		ArticleDAO articleDao = new ArticleDAO();
